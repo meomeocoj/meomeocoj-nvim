@@ -24,7 +24,6 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Save the file
-
 keymap("n", "<C-s>", ":w<CR>", opts)
 
 -- Resize with arrows
@@ -40,6 +39,9 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Move text up and down
 keymap("n", "˝", "<Esc>:m .+1<CR>==g", opts)
 keymap("n", "˚", "<Esc>:m .-2<CR>==g", opts)
+
+-- Search and replace under cursor
+keymap("n", "<C-f>", ":%s//<C-r><C-w>/gI<Left><Left><Left>", opts)
 
 -- Insert --
 -- Press jk fast to exit insert mode
