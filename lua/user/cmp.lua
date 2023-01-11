@@ -113,7 +113,9 @@ cmp.setup({
 		{ name = "nvim_lsp", key_length = 3 },
 		{ name = "luasnip", key_length = 3 },
 		{ name = "buffer", key_length = 3 },
+		{ name = "null-ls" },
 		{ name = "path" },
+		{ name = "nvim_lsp_signature_help" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,

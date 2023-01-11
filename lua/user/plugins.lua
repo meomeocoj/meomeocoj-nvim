@@ -68,7 +68,8 @@ return packer.startup(function(use)
 	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-nvim-lua" })
-
+	use({ "hrsh7th/cmp-nvim-lsp-signature-help" })
+	use({ "onsails/lspkind.nvim" })
 	-- Snippets
 	use({ "L3MON4D3/LuaSnip" }) --snippet engine
 	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
@@ -91,7 +92,26 @@ return packer.startup(function(use)
 
 	--RUST
 	use("simrat39/rust-tools.nvim")
+	use({
+		"saecki/crates.nvim",
+		tag = "v0.3.0",
+		requires = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("crates").setup()
+		end,
+	})
+	-- Navigator
+	use("christoomey/vim-tmux-navigator")
 
+	-- DAP
+	use("mfussenegger/nvim-dap")
+	use({
+		"rcarriga/nvim-dap-ui",
+		requires = "mfussenegger/nvim-dap",
+		config = function()
+			require("dapui").setup()
+		end,
+	})
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
